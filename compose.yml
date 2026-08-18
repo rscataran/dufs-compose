@@ -1,0 +1,11 @@
+services:
+    dufs:
+        volumes:
+            - ./data:/data
+            - ./assets:/assets
+            # - ./tls:/tls
+            - ./config.yml:/config.yml
+        ports:
+            - 5000:5000
+        image: sigoden/dufs
+        command: /data -c /config.yml
